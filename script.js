@@ -44,4 +44,9 @@ function dir(){document.documentElement.lang=lang;document.documentElement.dir=l
 function label(v){return v[lang==='ar'?0:lang==='en'?1:2]}
 function renderCats(){cats.innerHTML=`<button class="${active==='all'?'active':''}" data-cat="all">${lang==='ar'?'الكل':lang==='en'?'All':'Все'}</button>`+data.map((s,i)=>`<button class="${active==i?'active':''}" data-cat="${i}">${s.icon} ${s.cat[lang]}</button>`).join('')}
 function render(){dir();document.querySelectorAll('[data-i]').forEach(el=>el.textContent=t[lang][el.dataset.i]);search.placeholder=t[lang].search;renderCats();const q=search.value.trim().toLowerCase();menu.innerHTML='';data.forEach((s,i)=>{if(active!=='all'&&String(i)!==String(active))return;let items=s.items.filter(it=>(label(it)+' '+it[3]+' '+it[4]).toLowerCase().includes(q));if(!items.length)return;const card=document.createElement('article');card.className='section';card.innerHTML=`<h3>${s.icon} ${s.cat[lang]}</h3>`+items.map(it=>`<div class="item"><div><div class="name">${label(it)}</div>${it[3]?`<div class="desc">${it[3]}</div>`:''}</div><div class="price">${it[4]}</div></div>`).join('');menu.appendChild(card)})}
-document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;document.querySelectorAll('.langs button').forEach(x=>x.classList.toggle('active',x===b));render()});cats.onclick=e=>{if(e.target.tagName==='BUTTON'){active=e.target.dataset.cat;render()}};search.oninput=render;render();
+document.querySelectorAll('.langs button').forEach(b=>b.onclick=()=>{lang=b.dataset.lang;document.querySelectorAll('.langs button').forEach(x=>x.classList.toggle('active',x===b));render()});cats?.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+        active = e.target.dataset.cat;
+        render();
+    }
+});search?.addEventListener("input", render);();
