@@ -1,46 +1,165 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#49c7ee" />
-  <title>WAVES Beach Lounge Menu</title>
-  <meta name="description" content="WAVES Beach Lounge digital menu" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="top">
-    <div class="brand">
-      <div class="mark">≈</div>
-      <div>
-        <h1>WAVES</h1>
-        <p>Beach Lounge</p>
-      </div>
-    </div>
-    <div class="langs" aria-label="Language switcher">
-      <button data-lang="ar" class="active">عربي</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="ru">RU</button>
-    </div>
-  </header>
+<!DOCTYPE html>
+<html lang="en">
 
-  <main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WAVES Beach Lounge</title>
+
+    <meta name="description" content="WAVES Beach Lounge Digital Menu">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading -->
+
+    <div id="loader">
+
+        <div class="loader-logo">
+
+            <h1>🌊</h1>
+
+            <h2>WAVES</h2>
+
+            <span>Beach Lounge</span>
+
+        </div>
+
+    </div>
+
+    <!-- Hero -->
+
     <section class="hero">
-      <p class="eyebrow" data-i="eyebrow">قائمة الطعام والمشروبات</p>
-      <h2 data-i="title">WAVES Beach Lounge</h2>
-      <p data-i="subtitle">منيو خفيف وسريع للفتح على كل الموبايلات.</p>
-      <input id="search" type="search" placeholder="ابحث في المنيو..." autocomplete="off" />
+
+        <div class="overlay"></div>
+
+        <header>
+
+            <div class="logo">
+
+                <h1>WAVES</h1>
+
+                <span>Beach Lounge</span>
+
+            </div>
+
+            <div class="language">
+
+                <button class="active" data-lang="ar">عربي</button>
+
+                <button data-lang="en">EN</button>
+
+                <button data-lang="ru">RU</button>
+
+            </div>
+
+        </header>
+
+        <div class="hero-content">
+
+            <h2 id="hero-title">
+                Taste the Sea
+            </h2>
+
+            <p id="hero-subtitle">
+                Premium Beach Lounge Experience
+            </p>
+
+            <a href="#menu-section" class="menu-btn">
+
+                View Menu
+
+            </a>
+
+        </div>
+
     </section>
 
-    <nav id="cats" class="cats"></nav>
-    <section id="menu" class="menu"></section>
-  </main>
+    <!-- Menu -->
 
-  <footer>
-    <b>WAVES Beach Lounge</b>
-    <span>© 2026</span>
-  </footer>
+    <main id="menu-section">
 
-  <script src="script.js" defer></script>
+        <!-- Search -->
+
+        <section class="search-box">
+
+            <input
+                id="search"
+                type="search"
+                placeholder="Search menu...">
+
+        </section>
+
+        <!-- Categories -->
+
+        <section id="categories" class="categories">
+
+        </section>
+
+        <!-- Menu -->
+
+        <section id="menu" class="menu-grid">
+
+        </section>
+
+    </main>
+
+    <!-- Floating Buttons -->
+
+    <div class="floating">
+
+        <a href="tel:+201000000000">
+
+            📞
+
+        </a>
+
+        <a href="https://wa.me/201000000000">
+
+            💬
+
+        </a>
+
+        <a href="https://maps.google.com">
+
+            📍
+
+        </a>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>WAVES Beach Lounge</h3>
+
+        <p>
+
+            Taste The Sea • Feel The Waves
+
+        </p>
+
+        <small>
+
+            © 2026 All Rights Reserved
+
+        </small>
+
+    </footer>
+
+    <script src="data.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
